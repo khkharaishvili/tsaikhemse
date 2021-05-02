@@ -72,6 +72,8 @@ nav ul a, h1, h2, .pasta a, address {
     margin: 1px 0;
 }
 
+
+
 .first-section h1 {
     top: 308px;
     left: 337px;
@@ -334,7 +336,8 @@ header, ul {
     border-radius: 20px;
     margin-bottom: 20px;
     padding: 22px;
-    width: 1084px;
+    max-width: 1084px;
+    width: 100%;
     box-sizing: border-box;
     background-color: #fff;
     margin-top:63px;
@@ -346,6 +349,8 @@ header, ul {
 .map {
     overflow: hidden;
     margin-bottom: 31px;
+    max-width: 100%;
+    
 }
 
 footer:before{
@@ -401,14 +406,63 @@ footer {
 @media only screen and (min-width: 0px) {
     .burger {
         display: flex;
+        z-index: 5;
 
     }
     nav{
     	display: none;
     }
-    nav.active{
+    
+    .active {
     	display: flex;
     }
+
+    .active #bar1 {
+        -webkit-transform: rotate(-45deg) translate(-4px, 1px);
+        transform: rotate(-45deg) translate(-4px, 1px);
+      }
+      
+    .active #bar2 {opacity: 0;}
+      
+    .active #bar3 {
+        -webkit-transform: rotate(45deg) translate(-4px, -2px);
+        transform: rotate(45deg) translate(-4px, -2px);
+      }
+
+    .bmenu {
+        display: none;
+    }
+
+    .open {
+		display: flex;
+		position: absolute;
+		background-color: black;
+		left: 0;
+		right: 0;
+		top: 0;	
+		bottom: 0;
+		color: #fff;
+        z-index: 4;
+    }
+
+    .bmenu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 120px;
+        
+    }
+
+    .bmenu-items li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: normal;
+        display: block;
+        text-align: center;
+        padding-bottom: 60px;
+    }
+   
 }
 @media only screen and (min-width: 480px) {
     .burger {
@@ -417,5 +471,48 @@ footer {
     }
     nav{
     	display: flex;
+    }
+
+    .bmenu {
+        display: none;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .first-section h1 {
+        font-size: 28px;
+    }
+
+    .content-one:after {
+        z-index: -1;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .first-section h1 {
+        width: 220px;
+        height: auto;
+    }
+
+    .first-section p {
+        width: 293px;
+    }
+
+    .content-one:after {
+        display: none;
+    }
+
+    .contact-info {
+        text-align: center;
+        
     }
 }
