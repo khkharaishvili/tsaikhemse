@@ -11,6 +11,15 @@ for (let i = 0; i < len; i++) {
   });
 }
 
+// burger menu 
+const	burger = document. getElementById('burger');
+const menu = document.getElementById('menu')
+burger.addEventListener('click',function(){
+	this.classList.toggle('active');
+	menu.classList.toggle('open');
+
+})
+
   function scrollToBottom() {
     let element = document.getElementById('contact-info');
 
